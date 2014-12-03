@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>com.payneteasy</groupId>
+    <artifactId>reader-example</artifactId>
+    
+    <version>1.0-1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>example</name>
+
+    <modules>
+        <module>app-1</module>
+    </modules>
+
+    <properties>
+        <reader.version>1.4-20-SNAPSHOT</reader.version>
+
+
+        <slf4j.version>1.6.4</slf4j.version>
+        <!-- DEFAULT PROJECT ENCODING is UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <android.version>4.1.1.4</android.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>reader-repo</id>
+            <name>reader repo</name>
+            <url>http://paynet-qa.clubber.me/reader/maven</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android</artifactId>
+                <version>${android.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${android.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.android</groupId>
+                <artifactId>android-test</artifactId>
+                <version>${android.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!--
+              -  READER LIB
+              -->
+            <dependency>
+                <groupId>com.payneteasy.android.reader</groupId>
+                <artifactId>lib</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader</groupId>
+                <artifactId>api</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-gd-seed</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-common-bluetooth</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-miura</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-nfc</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-test</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <!-- log4j for lib -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-android</artifactId>
+                <version>1.6.1-RC1</version>
+            </dependency>
+
+            <!--
+              -  TEST
+              -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.1</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jayway.android.robotium</groupId>
+                <artifactId>robotium-solo</artifactId>
+                <version>4.2</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>3.6.0</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.6</source>
+                        <target>1.6</target>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
