@@ -12,13 +12,13 @@ Features
 * Remote mPOS configuration
 * Certified with OpenWay. The first mobile POS Chip&PIN solution in Russia - http://www.openwaygroup.com/news_card.jsp?dcion=908&rgn=1&lng=1
 * Custom LCD messages for all stages
-* Unified API for all readers. 
+* Unified API for all readers
 * Implemented PaynetEasy Server API https://payneteasy.com/support/documents/introduction-mpos-integration.html
 * Many transaction types: sale, preauthorization, capture, cancel, reversal, partial reversal and etc.
 
 Supported Readers
 -----------------
-### Production:
+### Production
 * Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote 
 * OTI Saturn 6500
 
