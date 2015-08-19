@@ -11,10 +11,11 @@
 
     <modules>
         <module>app-1</module>
+        <module>app-2</module>
     </modules>
 
     <properties>
-        <reader.version>1.4-23-SNAPSHOT</reader.version>
+        <reader.version>1.4-26-SNAPSHOT</reader.version>
 
 
         <slf4j.version>1.6.4</slf4j.version>
@@ -97,6 +98,12 @@
             <dependency>
                 <groupId>com.payneteasy.android.reader.readers</groupId>
                 <artifactId>readers-test</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-miura-rxtx</artifactId>
                 <version>${reader.version}</version>
             </dependency>
 

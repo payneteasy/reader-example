@@ -1,10 +1,11 @@
-mPOS SDK for Android
-============================
+mPOS SDK for Android and Java
+=============================
 
 SDK provides fast, easy integration with mPOS readers in mobile apps.
 
 Features
 --------
+* Runs both on Android and Java
 * MSR, EMV Contact, EMV Contactless transactions
 * Signature or PIN based transactions
 * Remote key injection
@@ -53,6 +54,7 @@ We'll walk you through integration and usage.
 ### Requirements
 
 *   Supports target deployment of Android from 2.2.
+*   Or Oracle JVM (tested on 1.8)
 
 ### Setup
 
@@ -64,7 +66,7 @@ Add the repository to your pom.xml
     <url>http://paynet-qa.clubber.me/reader/maven</url>
 </repository>
 ```
-### For Bluetooth Readers
+### For Bluetooth Readers (Android)
 
 Add to your AndroidManifest.xml
 ```xml
@@ -72,11 +74,15 @@ Add to your AndroidManifest.xml
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 ```
 
-### For Audio Jack Readers
+### For Audio Jack Readers (Android)
 Add to your AndroidManifest.xml
 ```xml
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 ```
+
+### For Miura (Java)
+
+Please see example app-2 how to run and assemble the application for Miura Readers to run on JVM.
 
 ### Sample Code
 
@@ -159,3 +165,5 @@ String currency = "RUB";
 SimpleCardReaderPresenter presenter = new SimpleCardReaderPresenter(this, statusView);
 cardReaderManager = CardReaderFactory.findManager(this, cardReader, presenter, amount, currency, null);
 ```
+
+
