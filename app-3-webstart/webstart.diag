@@ -16,7 +16,7 @@ seqdiag {
   browser ->> webserver [label = "WebSocket to \n/status.ws"];
 
   browser  -> WebStart  [label = "Run the JNLP file"];
-              WebStart  -> JavaClient
+              WebStart  -> JavaClient [label = "Run JavaClient"];
 
                            JavaClient ->>  Miura [label = "Make a sale"];
 

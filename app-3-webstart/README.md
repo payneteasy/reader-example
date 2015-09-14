@@ -40,6 +40,19 @@ How to run this example
    cd server && ./assemble.sh
 ```
 
+* Fix UNTRUSTED a Java WebStart application
+
+There are many empty web folders in mpos.jar.
+They haven't got signatures. For example:
+
+```
+           0 Mon Aug 25 14:48:18 MSK 2014 com/google/thirdparty/publicsuffix/
+           0 Mon Aug 25 14:48:18 MSK 2014 com/google/thirdparty/           
+```
+
+So Java Web Start fails to validate it.
+To fix it simple disable cache in Java Control Panel at "General" tab in "Temporary Internet Files"
+
 * Run a webserver
 
 ```bash

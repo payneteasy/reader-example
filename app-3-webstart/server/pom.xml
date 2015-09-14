@@ -115,7 +115,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.payneteasy.android.sdk.reader.miurarxtx.console.Console</mainClass>
+                            <mainClass>com.payneteasy.webstart.server.WebServer</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
