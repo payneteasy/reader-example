@@ -1,0 +1,26 @@
+seqdiag {
+  browser  -> webserver [label = "GET /"];
+  browser <-- webserver [label = "Checkout form"];
+
+  browser  -> webserver [label = "AJAX POST /checkout.do"];
+  browser <-- webserver [label = "{invoice : '1234-5678'}"];
+
+  browser  -> webserver [label = "GET /wait.html?invoice=1234-5678"];
+  browser <-- webserver [label = "Wait Form"];
+
+  browser  -> webserver [label = "GET /invoice-1234-5678.jnlp"];
+  browser <-- webserver [label = "JNLP file with order parameters"];
+
+  browser ->> webserver [label = "WebSocket to /status.ws"];
+
+  browser  -> WebStart  [label = "Run the JNLP file"];
+              WebStart  -> JavaClient
+
+                           JavaClient ->  Miura [label = "Connect via Serial"];
+                           JavaClient ->  Swing [label = "Show a payment status window"];
+                           JavaClient ->  Miura [label = "Make a sale"];
+                           JavaClient ->> webserver [ label = "POST /update-status.do"];
+                           JavaClient ->> webserver [ label = "POST /update-status.do"];
+
+  browser <<- webserver [ label = "Status event via WebSocket"];
+}

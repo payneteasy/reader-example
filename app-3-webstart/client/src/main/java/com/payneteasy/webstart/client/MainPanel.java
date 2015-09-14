@@ -89,7 +89,7 @@ public class MainPanel extends JPanel implements IPaymentStatus {
     }
 
     private String trimText(String aStatus) {
-        return aStatus != null && aStatus.length() > 200
+        return aStatus != null && aStatus.length() > 500
                 ? aStatus.substring(0, 500) + "..."
                 : aStatus;
     }

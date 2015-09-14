@@ -12,6 +12,7 @@
     <modules>
         <module>app-1</module>
         <module>app-2</module>
+        <module>app-3-webstart</module>
     </modules>
 
     <properties>
