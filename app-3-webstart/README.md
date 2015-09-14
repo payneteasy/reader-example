@@ -1,12 +1,12 @@
 How to use the mPOS SDK via Java Web Start
 ==========================================
 
-The Sequest Diagram
+The Overall Process
 
-.. figure:: https://github.com/payneteasy/reader-example/raw/master/app-3-webstart/webstart.png
+![](webstart.png)
 
-Steps
------
+How to run this example
+-----------------------
 
 * Make a project
 
