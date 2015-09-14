@@ -3,19 +3,23 @@ How to use the mPOS SDK via Java Web Start
 
 The Sequest Diagram
 
-.. figure:: webstart.png
+.. figure:: https://github.com/payneteasy/reader-example/raw/master/app-3-webstart/webstart.png
 
 Steps
 -----
 
 * Make a project
 
+```bash
    mvn clean install
+```
 
 * Create your certificate, private key and put them to a key stores (JKS and P12).
   
+```bash
    cd client && create-keystore.sh
-  
+```
+
 * Install your certificate in Java
 
  1. open Java control panel
@@ -26,16 +30,20 @@ Steps
    
 * Copy new mpos.jar to a web-server
 
-   cd client && ./assemble.sh
-   
+```bash
+ cd client && ./assemble.sh
+```
+
 * Assemble a webserver single jar archive
 
+```bash
    cd server && ./assemble.sh
-   
+```
+
 * Run a webserver
 
+```bash
    java -jar server/target/server-1.0-1-SNAPSHOT-jar-with-dependencies.jar
+```
    
 * Open your browser at http://localhost:8080
-
-
