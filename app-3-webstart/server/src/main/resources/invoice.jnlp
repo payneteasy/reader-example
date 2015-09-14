@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp     spec = "1.0+"
+      codebase = "{{codebase_url}}"
+          href = "{{jnlp_file}}"
+        >
+
+    <information>
+        <title>Payment Demo Demo</title>
+        <vendor>Evgeniy Sinev</vendor>
+    </information>
+
+    <security>
+        <all-permissions/>
+    </security>
+
+    <resources>
+        <j2se version="1.7+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="mpos.jar" main="true" />
+    </resources>
+
+    <application-desc
+            name="Payment Demo Application"
+            main-class="com.payneteasy.webstart.client.Main"
+            width="300"
+            height="300">
+
+        <argument>-amount</argument>
+        <argument>{{amount}}</argument>
+
+        <argument>-currency</argument>
+        <argument>{{currency}}</argument>
+
+        <argument>-description</argument>
+        <argument>{{description}}</argument>
+
+        <argument>-invoice</argument>
+        <argument>{{invoice}}</argument>
+
+    </application-desc>
+
+    <update check="background"/>
+</jnlp>
