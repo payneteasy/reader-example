@@ -84,6 +84,9 @@ Add to your AndroidManifest.xml
 
 Please see example app-2 how to run and assemble the application for Miura Readers to run on JVM.
 
+app-3-webstart shows how to run the application from a browser via Java WebStart (https://www.youtube.com/watch?v=OgdUfHqBvmI).
+
+
 ### Sample Code
 
 Implement the IReaderPresenter interface
