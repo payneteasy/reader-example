@@ -84,7 +84,10 @@ Add to your AndroidManifest.xml
 
 Please see example app-2 how to run and assemble the application for Miura Readers to run on JVM.
 
-app-3-webstart shows how to run the application from a browser via Java WebStart (https://www.youtube.com/watch?v=OgdUfHqBvmI).
+app-3-webstart shows how to run the application from a browser via Java WebStart:
+* Linux https://www.youtube.com/watch?v=rLSx3SrkMqA
+* Mac OS X - https://www.youtube.com/watch?v=OgdUfHqBvmI
+* Windows - https://www.youtube.com/watch?v=I6PPO-j9KSk
 
 
 ### Sample Code
