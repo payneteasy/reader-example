@@ -104,10 +104,17 @@
                             <h4 class="text-right">Total <strong>$50.00</strong></h4>
                         </div>
                         <div class="col-xs-3">
-                            <button type="button" id='checkout-button' class="btn btn-success btn-block">
-                                Checkout
+                            <button type="button" id='checkout-button-jnlp' class="btn btn-success btn-block">
+                                Checkout JNLP
                             </button>
                         </div>
+                        <!--<div class="col-xs-9">-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-3">-->
+                            <!--<button type="button" id='checkout-button-applet' class="btn btn-success btn-block">-->
+                                <!--Checkout Applet-->
+                            <!--</button>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -123,11 +130,19 @@
 
 <script>
 
-    $(document).ready(function() {
-        $('#checkout-button').click( function() {
+    function enableControls(aEnable) {
             // disables all inputs and buttons
-            $('input[type="text"]').prop('disabled', true);
-            $('button').prop('disabled', true);
+            $('input[type="text"]').prop('disabled', !aEnable);
+            $('button').prop('disabled', !aEnable);
+    }
+
+    $(document).ready(function() {
+
+
+        // jnlp
+        $('#checkout-button-jnlp').click( function() {
+
+            enableControls(false);
 
             // sends a checkout form to a server and wait for the invoice id
             $.ajax(
@@ -138,10 +153,25 @@
 
              }).fail(function(jqXHR, textStatus) {
                  alert("fail: "+textStatus);
-                $('input[type="text"]').prop('disabled', false);
-                $('button').prop('disabled', false);
+                 enableControls(true);
              });
+        });
 
+        // applet
+        $('#checkout-button-applet').click( function() {
+            enableControls(false);
+
+            // sends a checkout form to a server and wait for the invoice id
+            $.ajax(
+                {url: "checkout.do", method: "POST", dataType: 'json'}
+            ).done(function(aData) {
+
+                 document.location.href = "wait_applet.html?invoice="+aData.invoice;
+
+             }).fail(function(jqXHR, textStatus) {
+                 alert("fail: "+textStatus);
+                 enableControls(true);
+             });
         });
     });
 

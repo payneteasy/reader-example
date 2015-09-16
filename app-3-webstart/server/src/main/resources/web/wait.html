@@ -64,7 +64,7 @@
 
         document.location.href = "invoice-"+invoice+".jnlp";
 
-        var ws = new WebSocket("ws://localhost:8080/status.ws?invoice="+invoice);
+        var ws = new WebSocket("ws://"+window.location.host+"/status.ws?invoice="+invoice);
 
         ws.onopen = function() {
             $("#reader-status").html("Connected");

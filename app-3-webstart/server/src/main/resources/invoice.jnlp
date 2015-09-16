@@ -36,6 +36,9 @@
         <argument>-invoice</argument>
         <argument>{{invoice}}</argument>
 
+        <argument>-update-status-url</argument>
+        <argument>{{codebase_url}}/update-status.do</argument>
+
     </application-desc>
 
     <update check="background"/>

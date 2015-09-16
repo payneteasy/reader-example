@@ -47,6 +47,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <applet archive="http://localhost:8080/mpos.jar"
+                                    codebase="http://localhost:8080/"
+                                    code="com.payneteasy.webstart.client.ReaderApplet"
+                                    width="600"
+                                    height="500"
+                                    title="undefined"
+                                    jnlp_href = 'invoice-123.jnlp'
+                                    >
+                                <param name="permissions" value="all-permissions">
+                                <!--<param name="permissions" value="sandbox">-->
+                                <param name="nimgs" value="17">
+                                <param name="offset" value="-57">
+                                <param name="img" value="images/tumble">
+                                <param name="maxwidth" value="120">
+                                <param name="codebase_lookup" value="false">
+
+                                <param name="amount" value="1.0">
+                                <param name="currency" value="RUB">
+                                <param name="description" value="descr">
+                                <param name="invoice" value="123-123-123">
+                            </applet>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -82,22 +109,6 @@
 </script>
 
 
-<script src="https://www.java.com/js/deployJava.js" type="text/javascript">
-</script><script type="text/javascript">
-//<![CDATA[
-    var attributes = {  archive: 'http://localhost:9090/mpos.jar',
-                       codebase: 'http://localhost:9090/',
-                           code: 'com.payneteasy.webstart.client.Applet'
-                        , width:'600'
-                       , height:'95' };
-
-    var parameters = { permissions:'sandbox', nimgs:'17', offset:'-57',
-                       img: 'images/tumble', maxwidth:'120' };
-
-    // deployJava.runApplet(attributes, parameters, '1.7+');
-    deployJava.writeAppletTag(attributes, parameters);
-//]]>
-</script><noscript>A browser with Javascript enabled is required for this page to operate properly.</noscript>
 
 
 </body>

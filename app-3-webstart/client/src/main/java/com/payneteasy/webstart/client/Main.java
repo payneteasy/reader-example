@@ -14,6 +14,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -22,6 +24,15 @@ public class Main {
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
+        System.out.println("Version 4");
+
+        try {
+            LogManager logManager = LogManager.getLogManager();
+            logManager.readConfiguration(Main.class.getResourceAsStream("/logging.properties"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         JFrame.setDefaultLookAndFeelDecorated(true);
 
         PaymentInfo payment;
@@ -70,11 +81,13 @@ public class Main {
         payment.currency    = parameters.currency;
         payment.invoice     = parameters.invoice;
         payment.description = parameters.description;
+        payment.updateStatusUrl = parameters.updateStatusUrl;
 
         return payment;
     }
 
     private static void startPayment(JFrame aFrame, MainPanel aMainPanel, PaymentInfo aPayment) {
+        // "/dev/ttyACM0"
         CardReaderInfo readerInfo = new CardReaderInfo("Miura", CardReaderType.MIURA, null);
         EmvProcessingService processingService = new EmvProcessingService(null, readerInfo, aPayment.amount, aPayment.currency);
         ReaderConfigContext context = new ReaderConfigContext.Builder()

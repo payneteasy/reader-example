@@ -20,4 +20,8 @@ public class StartParameters {
     @Option(name="-description", description = "Order description", required = true)
     public String     description;
 
+    @Option(name="-update-status-url", description = "Update status url", required = false)
+    public String     updateStatusUrl = "http://localhost:8080/update-status.do";
+
+
 }

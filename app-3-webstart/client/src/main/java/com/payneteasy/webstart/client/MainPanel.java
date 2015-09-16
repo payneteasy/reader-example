@@ -71,7 +71,7 @@ public class MainPanel extends JPanel implements IPaymentStatus {
                 .build();
 
         Request request = new Request.Builder()
-                .url("http://localhost:8080/update-status.do")
+                .url(paymentInfo.updateStatusUrl)
                 .post(formBody)
                 .build();
 

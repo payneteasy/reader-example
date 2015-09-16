@@ -104,6 +104,10 @@
                         <manifest>
                             <mainClass>com.payneteasy.webstart.client.Main</mainClass>
                         </manifest>
+                        <manifestEntries>
+                            <Permissions>all-permissions</Permissions>
+                            <Application-Name>mPOS Web Start Example</Application-Name>
+                        </manifestEntries>
                     </archive>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>

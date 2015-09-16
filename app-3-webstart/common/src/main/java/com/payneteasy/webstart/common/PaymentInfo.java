@@ -8,4 +8,5 @@ public class PaymentInfo {
     public String     currency;
     public String     invoice;
     public String     description;
+    public String     updateStatusUrl;
 }

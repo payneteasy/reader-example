@@ -8,8 +8,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class StaticServlet extends HttpServlet {
 
@@ -36,7 +35,7 @@ public class StaticServlet extends HttpServlet {
 
         String resource = PREFIX + url;
 
-        InputStream in = getClass().getResourceAsStream(resource);
+        InputStream in = findFileOrResource(resource);
         if(in == null) {
             LOG.error("Resource {} not found for url {} [ requestURL = {} ]", new Object[] {resource, url, aRequest.getRequestURL()});
             aResponse.sendError(HttpServletResponse.SC_NOT_FOUND, resource + " not found");
@@ -47,6 +46,17 @@ public class StaticServlet extends HttpServlet {
 
         aResponse.setContentType(contentType);
         copyStream(in, aResponse.getOutputStream());
+    }
+
+    private InputStream findFileOrResource(String resource) throws FileNotFoundException {
+        File file = new File(new File("server/src/main/resources"), resource);
+        LOG.debug("File is {}", file.getAbsolutePath());
+        if(file.exists()) {
+            return new FileInputStream(file);
+        } else {
+            LOG.warn("File does not exists, fallback to resources");
+            return getClass().getResourceAsStream(resource);
+        }
     }
 
     private static void copyStream(InputStream in, ServletOutputStream out) throws IOException {
