@@ -20,7 +20,7 @@ Features
 Supported Readers
 -----------------
 ### Production
-* Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote 
+* Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
 * OTI Saturn 6500
 
 ### Deprecated from the 1st of January 2015 
