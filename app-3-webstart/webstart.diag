@@ -1,31 +1,31 @@
 seqdiag {
   default_fontsize = 14;
 
-  browser  -> webserver [label = "GET /"];
+  browser  -> webserver [label = "(1) GET /"];
   browser <-- webserver [label = "Checkout form"];
 
-  browser  -> webserver [label = "AJAX POST \n/checkout.do"];
+  browser  -> webserver [label = "(2) AJAX POST \n/checkout.do"];
   browser <-- webserver [label = "{invoice : '1234-5678'}"];
 
-  browser  -> webserver [label = "GET \n/wait.html?invoice=1234-5678"];
+  browser  -> webserver [label = "(3) GET \n/wait.html?invoice=1234-5678"];
   browser <-- webserver [label = "Wait Form"];
 
-  browser  -> webserver [label = "GET \n/invoice-1234-5678.jnlp"];
+  browser  -> webserver [label = "(4) GET \n/invoice-1234-5678.jnlp"];
   browser <-- webserver [label = "JNLP file with \norder parameters"];
 
-  browser ->> webserver [label = "WebSocket to \n/status.ws"];
+  browser ->> webserver [label = "(5) WebSocket to \n/status.ws"];
 
-  browser  -> WebStart  [label = "Run the JNLP file"];
-              WebStart  -> JavaClient [label = "Run JavaClient"];
+  browser  -> WebStart  [label = "(6) Run the JNLP file"];
+              WebStart  -> JavaClient [label = "(7) Run JavaClient"];
 
-                           JavaClient ->>  Miura [label = "Make a sale"];
+                           JavaClient ->>  Miura [label = "(8) Make a sale"];
 
-              webserver  <<-  JavaClient [ label = "POST /update-status.do"];
+              webserver  <<-  JavaClient [ label = "(9) POST /update-status.do"];
               ... Miura or Processing Events ...
-              webserver  <<-  JavaClient [ label = "POST /update-status.do"];
-  browser <<- webserver [ label = "Status events\n via WebSocket"];
+              webserver  <<-  JavaClient [ label = "(10) POST /update-status.do"];
+  browser <<- webserver [ label = "(11) Status events\n via WebSocket"];
 
-                           JavaClient <-  Miura [ label = "Sale is DONE"];
+                           JavaClient <-  Miura [ label = "(12) Sale is DONE"];
 
 
 }
