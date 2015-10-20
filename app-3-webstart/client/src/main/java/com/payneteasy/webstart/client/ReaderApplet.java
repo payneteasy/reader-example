@@ -6,15 +6,12 @@ import com.payneteasy.android.sdk.reader.CardReaderInfo;
 import com.payneteasy.android.sdk.reader.CardReaderType;
 import com.payneteasy.android.sdk.reader.ReaderConfigContext;
 import com.payneteasy.android.sdk.reader.miurarxtx.MiuraRxTxReader;
+import com.payneteasy.android.sdk.reader.rxtx.github.RxTxSerialManagerGithub;
 import com.payneteasy.webstart.common.PaymentInfo;
-import gnu.io.NoSuchPortException;
-import gnu.io.PortInUseException;
-import gnu.io.UnsupportedCommOperationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.awt.*;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
@@ -65,7 +62,7 @@ public class ReaderApplet extends java.applet.Applet {
                 @Override
                 public Object run() {
                     try {
-                        manager.start();
+                        manager.start(new RxTxSerialManagerGithub());
                     } catch (Exception e) {
                         LOG.error("Priv action", e);
                     }

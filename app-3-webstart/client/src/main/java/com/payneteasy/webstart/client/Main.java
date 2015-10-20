@@ -5,6 +5,7 @@ import com.payneteasy.android.sdk.reader.CardReaderInfo;
 import com.payneteasy.android.sdk.reader.CardReaderType;
 import com.payneteasy.android.sdk.reader.ReaderConfigContext;
 import com.payneteasy.android.sdk.reader.miurarxtx.MiuraRxTxReader;
+import com.payneteasy.android.sdk.reader.rxtx.github.RxTxSerialManagerGithub;
 import com.payneteasy.webstart.common.PaymentInfo;
 import io.airlift.airline.SingleCommand;
 import org.slf4j.Logger;
@@ -101,7 +102,7 @@ public class Main {
         MiuraRxTxReader manager = new MiuraRxTxReader(context);
         try {
             LOG.debug("Starting reader manager ...");
-            manager.start();
+            manager.start(new RxTxSerialManagerGithub());
 
             aFrame.addWindowListener(new WindowAdapter() {
                 @Override

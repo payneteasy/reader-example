@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <reader.version>1.4-27-SNAPSHOT</reader.version>
+        <reader.version>1.4-28-SNAPSHOT</reader.version>
 
 
         <slf4j.version>1.6.4</slf4j.version>
@@ -105,6 +105,12 @@
             <dependency>
                 <groupId>com.payneteasy.android.reader.readers</groupId>
                 <artifactId>readers-miura-rxtx</artifactId>
+                <version>${reader.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.payneteasy.android.reader.readers</groupId>
+                <artifactId>readers-common-rxtx-github</artifactId>
                 <version>${reader.version}</version>
             </dependency>
 

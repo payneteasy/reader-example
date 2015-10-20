@@ -5,7 +5,7 @@ import com.payneteasy.android.sdk.reader.CardReaderInfo;
 import com.payneteasy.android.sdk.reader.CardReaderType;
 import com.payneteasy.android.sdk.reader.ReaderConfigContext;
 import com.payneteasy.android.sdk.reader.miurarxtx.MiuraRxTxReader;
-import com.payneteasy.android.sdk.reader.rxtx.github.RxTxSerialManagerGithub;
+import com.payneteasy.android.sdk.reader.rxtx.qbang.RxTxSerialManagerQbang;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +30,7 @@ public class Console {
 
         MiuraRxTxReader manager = new MiuraRxTxReader(context);
         try {
-            manager.start(new RxTxSerialManagerGithub());
+            manager.start(new RxTxSerialManagerQbang());
 
             Thread.sleep(60000);
 

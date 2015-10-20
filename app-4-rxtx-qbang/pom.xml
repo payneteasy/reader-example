@@ -3,57 +3,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.payneteasy</groupId>
-        <artifactId>reader-example</artifactId>
-        <version>1.0-1-SNAPSHOT</version>
-    </parent>
 
     <groupId>com.payneteasy.reader-example</groupId>
-    <artifactId>app-2</artifactId>
+    <artifactId>app-4-rxtx-qbang</artifactId>
     <version>1.0-1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>reader-example app-2</name>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>compile</scope>
-            </dependency>
+    <properties>
+        <reader.version>1.4-28-SNAPSHOT</reader.version>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>jcl-over-slf4j</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>compile</scope>
-            </dependency>
 
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>log4j-over-slf4j</artifactId>
-                <version>${slf4j.version}</version>
-                <scope>compile</scope>
-            </dependency>
+        <slf4j.version>1.6.4</slf4j.version>
+        <!-- DEFAULT PROJECT ENCODING is UTF-8 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <android.version>4.1.1.4</android.version>
+    </properties>
 
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-classic</artifactId>
-                <version>0.9.29</version>
-                <scope>compile</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>ch.qos.logback</groupId>
-                <artifactId>logback-core</artifactId>
-                <version>0.9.29</version>
-                <scope>compile</scope>
-            </dependency>
-
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
 
     <!-- slf4j -->
@@ -95,6 +61,7 @@
         <dependency>
             <groupId>com.payneteasy.android.reader</groupId>
             <artifactId>lib</artifactId>
+            <version>${reader.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-android</artifactId>
@@ -106,22 +73,27 @@
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>android</artifactId>
+            <version>${android.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.payneteasy.android.reader.readers</groupId>
-            <artifactId>readers-common-rxtx-github</artifactId>
+            <artifactId>readers-common-rxtx-qbang</artifactId>
+            <version>${reader.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.payneteasy.android.reader.readers</groupId>
             <artifactId>readers-miura-rxtx</artifactId>
+            <version>${reader.version}</version>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+            <version>4.8.1</version>
         </dependency>
 
     </dependencies>
@@ -160,6 +132,15 @@
                     <copyPom>true</copyPom>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
 
         </plugins>
     </build>

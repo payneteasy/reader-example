@@ -74,9 +74,15 @@
             <artifactId>android</artifactId>
         </dependency>
 
+
         <dependency>
             <groupId>com.payneteasy.android.reader.readers</groupId>
             <artifactId>readers-miura-rxtx</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.payneteasy.android.reader.readers</groupId>
+            <artifactId>readers-common-rxtx-github</artifactId>
         </dependency>
 
         <dependency>
