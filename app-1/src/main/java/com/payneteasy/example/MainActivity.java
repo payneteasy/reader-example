@@ -21,10 +21,6 @@ public class MainActivity extends Activity {
     }
 
 
-    public void startGdSeed(View aView) {
-        ActivityUtil.startActivity(this, ReaderActivity.class, CardReaderInfo.GDSEED_LIGHT);
-    }
-
     public void startTest(View aView) {
         ActivityUtil.startActivity(this, ReaderActivity.class, CardReaderInfo.TEST);
     }

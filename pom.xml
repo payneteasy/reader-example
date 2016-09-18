@@ -16,10 +16,10 @@
     </modules>
 
     <properties>
-        <reader.version>1.4-29-SNAPSHOT</reader.version>
+        <reader.version>1.4-30-SNAPSHOT</reader.version>
 
 
-        <slf4j.version>1.6.4</slf4j.version>
+        <slf4j.version>1.7.21</slf4j.version>
         <!-- DEFAULT PROJECT ENCODING is UTF-8 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <android.version>4.1.1.4</android.version>
@@ -31,6 +31,12 @@
             <name>reader repo</name>
             <url>http://paynet-qa.clubber.me/reader/maven</url>
         </repository>
+
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+
     </repositories>
 
     <dependencyManagement>
@@ -74,12 +80,6 @@
 
             <dependency>
                 <groupId>com.payneteasy.android.reader.readers</groupId>
-                <artifactId>readers-gd-seed</artifactId>
-                <version>${reader.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.payneteasy.android.reader.readers</groupId>
                 <artifactId>readers-common-bluetooth</artifactId>
                 <version>${reader.version}</version>
             </dependency>
@@ -114,11 +114,11 @@
                 <version>${reader.version}</version>
             </dependency>
 
-            <!-- log4j for lib -->
+            <!-- slf4j -->
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-android</artifactId>
-                <version>1.6.1-RC1</version>
+                <groupId>com.github.payneteasy.slf4j-remote</groupId>
+                <artifactId>android</artifactId>
+                <version>1.0-1</version>
             </dependency>
 
             <!--

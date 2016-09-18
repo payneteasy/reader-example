@@ -11,7 +11,7 @@
     <name>reader-example app-2</name>
 
     <properties>
-        <reader.version>1.4-29-SNAPSHOT</reader.version>
+        <reader.version>1.4-30-SNAPSHOT</reader.version>
 
 
         <slf4j.version>1.6.4</slf4j.version>

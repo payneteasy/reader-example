@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <reader.version>1.4-29-SNAPSHOT</reader.version>
+        <reader.version>1.4-30-SNAPSHOT</reader.version>
 
 
         <slf4j.version>1.6.4</slf4j.version>
@@ -88,12 +88,6 @@
             <dependency>
                 <groupId>com.payneteasy.android.reader</groupId>
                 <artifactId>api</artifactId>
-                <version>${reader.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>com.payneteasy.android.reader.readers</groupId>
-                <artifactId>readers-gd-seed</artifactId>
                 <version>${reader.version}</version>
             </dependency>
 

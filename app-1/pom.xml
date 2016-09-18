@@ -49,11 +49,6 @@
 
         <dependency>
             <groupId>com.payneteasy.android.reader.readers</groupId>
-            <artifactId>readers-gd-seed</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.payneteasy.android.reader.readers</groupId>
             <artifactId>readers-miura</artifactId>
         </dependency>
 
@@ -72,10 +67,10 @@
             <artifactId>readers-test</artifactId>
         </dependency>
 
-        <!-- log4j for lib -->
+        <!-- slf4j -->
         <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-android</artifactId>
+            <groupId>com.github.payneteasy.slf4j-remote</groupId>
+            <artifactId>android</artifactId>
         </dependency>
 
         <dependency>
