@@ -1,7 +1,4 @@
-language: java
-
-jdk:
-- oraclejdk8
+language: android
 
 cache:
   directories:
