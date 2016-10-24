@@ -1,6 +1,8 @@
 language: android
 
 before_install:
+  - ls -l /usr/local
+  - cat /etc/mavenrc
   - sudo rm -rf /usr/local/maven*
   - sudo sed -ie '/M2_HOME/d' /etc/mavenrc
   - sudo apt-get update -qq
