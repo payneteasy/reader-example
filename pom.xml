@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <reader.version>1.4-34</reader.version>
+        <reader.version>1.4-35</reader.version>
 
 
         <slf4j.version>1.7.21</slf4j.version>
@@ -118,7 +118,7 @@
             <dependency>
                 <groupId>com.github.payneteasy.slf4j-remote</groupId>
                 <artifactId>android</artifactId>
-                <version>1.0-11</version>
+                <version>1.0-12</version>
             </dependency>
 
             <!--
