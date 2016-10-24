@@ -1,6 +1,8 @@
 mPOS SDK for Android and Java
 =============================
 
+[![Build Status](https://travis-ci.org/payneteasy/reader-example.svg?branch=master)](https://travis-ci.org/payneteasy/reader-example)
+
 SDK provides fast, easy integration with mPOS readers in mobile apps.
 
 Features
