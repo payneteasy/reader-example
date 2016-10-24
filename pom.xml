@@ -114,13 +114,6 @@
                 <version>${reader.version}</version>
             </dependency>
 
-            <!-- slf4j -->
-            <dependency>
-                <groupId>com.github.payneteasy.slf4j-remote</groupId>
-                <artifactId>android</artifactId>
-                <version>1.0-12</version>
-            </dependency>
-
             <!--
               -  TEST
               -->

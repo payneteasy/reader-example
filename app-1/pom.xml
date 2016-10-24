@@ -67,12 +67,6 @@
             <artifactId>readers-test</artifactId>
         </dependency>
 
-        <!-- slf4j -->
-        <dependency>
-            <groupId>com.github.payneteasy.slf4j-remote</groupId>
-            <artifactId>android</artifactId>
-        </dependency>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
