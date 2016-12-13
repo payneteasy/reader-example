@@ -58,7 +58,7 @@ We'll walk you through integration and usage.
 *   Supports target deployment of Android from 2.2.
 *   Or Oracle JVM (tested on 1.8)
 
-### Setup
+### Setup maven
 
 Add the repository to your pom.xml
 ```xml
@@ -68,6 +68,37 @@ Add the repository to your pom.xml
     <url>http://paynet-qa.clubber.me/reader/maven</url>
 </repository>
 ```
+
+### Setup gradle
+
+Add to your repositories section
+```
+repositories {
+...
+    maven { url "https://jitpack.io" }
+    maven { url "http://paynet-qa.clubber.me/reader/maven" }
+...
+}
+```
+
+Add to your dependencies 
+```
+dependencies {
+...
+    def readerVersion = '1.4-36'
+    compile 'com.payneteasy.android.reader:api:' + readerVersion
+    compile ('com.payneteasy.android.reader:lib:' + readerVersion)
+
+    compile 'com.payneteasy.android.reader.readers:readers-common-bluetooth:' + readerVersion
+    compile ('com.payneteasy.android.reader.readers:readers-miura:' + readerVersion) {
+        exclude group:'junit', module:'junit'
+    }
+... 
+}
+```
+You can find the full gradle example at https://github.com/payneteasy/reader-example-gradle
+
+
 ### For Bluetooth Readers (Android)
 
 Add to your AndroidManifest.xml
