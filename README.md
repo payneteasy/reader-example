@@ -14,7 +14,7 @@ Features
 * Remote firmware update
 * Remote mPOS configuration
 * Certified with OpenWay. The first mobile POS Chip&PIN solution in Russia - http://www.openwaygroup.com/news_card.jsp?dcion=908&rgn=1&lng=1
-* Custom LCD messages for all stages
+* Custom LCD messages for all stages (Miura only)
 * Unified API for all readers
 * Implemented PaynetEasy Server API https://payneteasy.com/support/documents/introduction-mpos-integration.html
 * Many transaction types: sale, preauthorization, capture, cancel, reversal, partial reversal and etc.
@@ -23,6 +23,7 @@ Supported Readers
 -----------------
 ### Production
 * Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
+* Spire Spm2 (comming soon): supports all spm2 features
 * OTI Saturn 6500
 
 ### Deprecated from the 1st of January 2015 
@@ -98,7 +99,6 @@ dependencies {
 ```
 You can find the full gradle example at https://github.com/payneteasy/reader-example-gradle
 
-
 ### For Bluetooth Readers (Android)
 
 Add to your AndroidManifest.xml
@@ -115,7 +115,7 @@ Add to your AndroidManifest.xml
 
 ### For Miura (Java)
 
-Please see example app-2 how to run and assemble the application for Miura Readers to run on JVM.
+Please see the example app-2 how to run and assemble the application for Miura Readers to run on JVM.
 
 app-3-webstart shows how to run the application from a browser via Java WebStart:
 * Linux https://www.youtube.com/watch?v=rLSx3SrkMqA
@@ -194,7 +194,7 @@ Implement the IReaderPresenter interface
 
 Note: Fill the Config.MERCHANT_LOGIN, Config.MERCHANT_KEY, Config.END_POINT_ID with your own values.
 
-Starts Reader Manager
+Starts the Reader Manager
 
 ```java
 CardReaderInfo cardReader = CardReaderInfo.TEST;
@@ -204,5 +204,3 @@ String currency = "RUB";
 SimpleCardReaderPresenter presenter = new SimpleCardReaderPresenter(this, statusView);
 cardReaderManager = CardReaderFactory.findManager(this, cardReader, presenter, amount, currency, null);
 ```
-
-
