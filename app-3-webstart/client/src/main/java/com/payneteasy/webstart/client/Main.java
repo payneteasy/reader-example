@@ -111,7 +111,7 @@ public class Main {
                     LOG.debug("Stop manager ...");
                     try {
                         manager.stop();
-                    } catch (InterruptedException e1) {
+                    } catch (Exception e1) {
                         LOG.error("Could not stop the reader manager", e);
                     }
                 }

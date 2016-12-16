@@ -16,7 +16,7 @@
     </modules>
 
     <properties>
-        <reader.version>1.4-36</reader.version>
+        <reader.version>1.4-38</reader.version>
 
 
         <slf4j.version>1.7.21</slf4j.version>
