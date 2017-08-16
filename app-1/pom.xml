@@ -54,6 +54,11 @@
 
         <dependency>
             <groupId>com.payneteasy.android.reader.readers</groupId>
+            <artifactId>readers-spire</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.payneteasy.android.reader.readers</groupId>
             <artifactId>readers-common-bluetooth</artifactId>
         </dependency>
 

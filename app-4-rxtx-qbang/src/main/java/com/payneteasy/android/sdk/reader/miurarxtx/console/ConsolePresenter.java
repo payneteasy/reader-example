@@ -1,6 +1,7 @@
 package com.payneteasy.android.sdk.reader.miurarxtx.console;
 
 import com.payneteasy.android.sdk.card.BankCard;
+import com.payneteasy.android.sdk.logger.ILogger;
 import com.payneteasy.android.sdk.processing.ConfigurationContinuation;
 import com.payneteasy.android.sdk.processing.IProcessingStageListener;
 import com.payneteasy.android.sdk.processing.ProcessingContinuation;
@@ -16,7 +17,7 @@ import java.io.File;
 
 public class ConsolePresenter implements ICardReaderPresenter {
 
-    private static final Logger LOG = LoggerUtil.create(ConsolePresenter.class);
+    private static final ILogger LOG = LoggerUtil.create(ConsolePresenter.class);
 
     @Override
     public void cardReaderStateChanged(CardReaderEvent aEvent) {

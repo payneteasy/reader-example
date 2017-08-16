@@ -119,6 +119,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.payneteasy.android.reader.readers</groupId>
+            <artifactId>readers-spire-rxtx</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
