@@ -86,7 +86,7 @@ Add to your dependencies
 ```
 dependencies {
 ...
-    def readerVersion = '1.4-36'
+    def readerVersion = // check the latest version at https://github.com/payneteasy/reader-example/wiki/Changelog
     compile 'com.payneteasy.android.reader:api:' + readerVersion
     compile ('com.payneteasy.android.reader:lib:' + readerVersion)
 
