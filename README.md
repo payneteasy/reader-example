@@ -204,3 +204,10 @@ String currency = "RUB";
 SimpleCardReaderPresenter presenter = new SimpleCardReaderPresenter(this, statusView);
 cardReaderManager = CardReaderFactory.findManager(this, cardReader, presenter, amount, currency, null);
 ```
+
+Deal with cardReaderManager:
+
+* ICardReaderManager.onActivityCreate() creates resources for Bluetooth, Network
+* ICardReaderManager.onActivityResume() - starts connection to a Bluetooth terminal.
+* ICardReaderManager.onActivityPause() - disconnects from a Bluetooth terminal
+* ICardReaderManager.onActivityDestroy() - releases resources
