@@ -1,6 +1,11 @@
 language: android
 jdk: oraclejdk8
 
+android:
+  components:
+    - build-tools-26.0.2
+    - android-26
+
 before_install:
   - ls -l /usr/local
 
