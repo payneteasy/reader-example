@@ -24,7 +24,8 @@ Supported Readers
 ### Production
 * Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
 * Spire Spm2 (comming soon): supports all spm2 features
-* OTI Saturn 6500
+* Verifone Vx820 
+* PAX SP30
 
 ### Deprecated from the 1st of January 2015 
 * GD Seed: Integrated with the official SDK 
