@@ -24,8 +24,8 @@ Supported Readers
 ### Production
 * Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
 * Spire Spm2 (comming soon): supports all spm2 features
-* Verifone Vx820 
-* PAX SP30
+* Verifone Vx820 (usb, rs232, ethernet) 
+* PAX SP30 (usb, rs232, ethernet)
 
 ### Deprecated from the 1st of January 2015 
 * GD Seed: Integrated with the official SDK 
@@ -108,10 +108,58 @@ Add to your AndroidManifest.xml
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 ```
 
-### For Audio Jack Readers (Android)
-Add to your AndroidManifest.xml
+### For USB terminals (Android)
+
+Add new file res/xml/device_filter.xml
 ```xml
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 0x1234 / 0x0101  PAX / S80 -->
+    <usb-device vendor-id="4660" product-id="257" class="255" subclass="0" protocol="0"/>
+
+    <!-- 0x11CA / 0x0219  VeriFone Inc / Trident USB Device 1.1 / bInterfaceClass = 10 CDC Data -->
+    <usb-device vendor-id="4554" product-id="537" class="10" subclass="0" protocol="0"/>
+
+</resources>
+```
+
+Add to your AndroidManifest.xml to any activity element:
+```xml
+    <intent-filter>
+        <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+    </intent-filter>
+    <meta-data  android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/device_filter" />
+```
+
+Add to the activity:
+```java
+public class MainActivity extends Activity {
+
+    private final UsbPermissionResolver usbPermissionResolver = new UsbPermissionResolver();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ...
+        usbPermissionResolver.checkPermission(getIntent(), this);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        usbPermissionResolver.checkPermission(intent, this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        usbPermissionResolver.unregister(this);
+    }
+    
+    ...
+    
+}
 ```
 
 ### For Miura (Java)
