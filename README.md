@@ -162,6 +162,8 @@ public class MainActivity extends Activity {
 }
 ```
 
+Please see this commit for more information https://github.com/payneteasy/reader-example-gradle/commit/2aa02c47f38cef4f3a673e98fc5d5ecb98720656
+
 ### For Miura (Java)
 
 Please see the example app-2 how to run and assemble the application for Miura Readers to run on JVM.
