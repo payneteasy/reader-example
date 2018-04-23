@@ -22,9 +22,12 @@ Features
 Supported Readers
 -----------------
 ### Production
-* Miura Shutle, Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
-* Spire Spm2 (comming soon): supports all spm2 features
-* Verifone Vx820 (usb, rs232, ethernet) 
+
+All terminals support remote configuration and firmware update.
+
+* Miura Shutle (M006), Miura M007, Miura M010. Supports MSR, Contact, Contactless transactions. With or without PIN. Remote keys injection, remote configuration and remote MPI and OS update
+* Spire Spm2
+* Verifone Vx820 (usb, rs232, ethernet)
 * PAX SP30 (usb, rs232, ethernet)
 
 ### Deprecated from the 1st of January 2015 
