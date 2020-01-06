@@ -29,6 +29,7 @@ All terminals support remote configuration and firmware update.
 * Spire Spm2
 * Verifone Vx820 (usb, rs232, ethernet)
 * PAX SP30 (usb, rs232, ethernet)
+* Telpo TPS900, Кассатка Мини
 
 ### Deprecated from the 1st of January 2015 
 * GD Seed: Integrated with the official SDK 
